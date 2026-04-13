@@ -1,0 +1,12 @@
+params:
+  - id: codeg_token
+    type: secret
+    name: "CODEG Token"
+    description: "API token for CodeG service"
+    optional: false
+
+locales:
+  zh:
+    codeg_token:
+      name: "CODEG 令牌"
+      description: "CodeG服务的访问令牌"

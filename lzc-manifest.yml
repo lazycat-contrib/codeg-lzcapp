@@ -1,0 +1,25 @@
+application:
+  subdomain: codeg
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://codeg:3080/
+
+services:
+  codeg:
+    # ghcr.io/xintaofei/codeg:0.8.3
+    image: registry.lazycat.cloud/czyt/xintaofei/codeg:386a4c7120647fa0
+    environment:
+      - CODEG_TOKEN={{.U.codeg_token}}
+    binds:
+      - /lzcapp/var/data:/data
+      - /lzcapp/var/projects:/projects
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -f http://localhost:3080/ || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
