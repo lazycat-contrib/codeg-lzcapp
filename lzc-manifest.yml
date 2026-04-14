@@ -13,7 +13,8 @@ application:
       do:
         - src: builtin://simple-inject-password
           params:
-            openClawGatewayToken: '{{ index .U "codeg_token" }}'
+            password: '{{ index .U "codeg_token" }}'
+            allowPasswordOnly: true
 
 services:
   codeg:
