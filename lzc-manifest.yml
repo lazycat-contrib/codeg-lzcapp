@@ -6,14 +6,27 @@ application:
     - location: /
       backend: http://codeg:3080/
 
+  injects:
+    - id: codeg-token-autofill
+      when:
+        - /login
+      do:
+        - src: builtin://simple-inject-password
+          params:
+            openClawGatewayToken: '{{ index .U "codeg_token" }}'
+
 services:
   codeg:
-    # ghcr.io/xintaofei/codeg:0.8.3
-    image: registry.lazycat.cloud/czyt/xintaofei/codeg:386a4c7120647fa0
+    # ghcr.io/xintaofei/codeg:0.8.5
+    image: registry.lazycat.cloud/czyt/xintaofei/codeg:42eb9d2e24668adb
+    user: root
     environment:
       - CODEG_TOKEN={{.U.codeg_token}}
     binds:
       - /lzcapp/var/data:/data
+      - /lzcapp/var/claude:/root/.claude
+      - /lzcapp/var/gemini:/root/.gemini
+      - /lzcapp/var/codex:/root/.codex
       - /lzcapp/var/projects:/projects
     healthcheck:
       test:

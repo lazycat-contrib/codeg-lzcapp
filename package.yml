@@ -1,5 +1,5 @@
 package: community.lazycat.app.codeg
-version: 0.8.3
+version: 0.8.5
 name: Codeg
 description: "Aggregate and browse AI coding agent sessions (Claude Code, Codex, Gemini CLI, etc.) in one place"
 min_os_version: 1.5.0
