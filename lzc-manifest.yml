@@ -5,7 +5,6 @@ application:
   upstreams:
     - location: /
       backend: http://codeg:3080/
-
   injects:
     - id: codeg-token-autofill
       when:
@@ -15,11 +14,11 @@ application:
           params:
             password: '{{ index .U "codeg_token" }}'
             allowPasswordOnly: true
-
 services:
   codeg:
     # ghcr.io/xintaofei/codeg:0.8.8
-    image: registry.lazycat.cloud/czyt/xintaofei/codeg:c858516e649fc07f
+    # upstream: ghcr.io/xintaofei/codeg:0.20.2
+    image: registry.lazycat.cloud/czyt/xintaofei/codeg:6c78ef7fac0e2c81
     user: root
     environment:
       - CODEG_TOKEN={{.U.codeg_token}}

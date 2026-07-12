@@ -1,12 +1,11 @@
 package: community.lazycat.app.codeg
-version: 0.8.8
+version: 0.20.2
 name: Codeg
 description: "Aggregate and browse AI coding agent sessions (Claude Code, Codex, Gemini CLI, etc.) in one place"
 min_os_version: 1.5.0
 author: "xintaofei"
 license: Apache-2.0
 homepage: https://github.com/xintaofei/codeg
-
 locales:
   zh:
     name: "Codeg"
@@ -14,7 +13,6 @@ locales:
   en:
     name: "Codeg"
     description: "Aggregate and browse AI coding agent sessions (Claude Code, Codex, Gemini CLI, etc.) in one place - Desktop app, self-hosted server, or Docker"
-
 permissions:
   required:
     - net.internet
