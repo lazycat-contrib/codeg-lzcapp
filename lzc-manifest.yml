@@ -17,8 +17,8 @@ application:
 services:
   codeg:
     # ghcr.io/xintaofei/codeg:0.8.8
-    # upstream: ghcr.io/xintaofei/codeg:0.22.0
-    image: registry.lazycat.cloud/czyt/xintaofei/codeg:221de479b1fe9737
+    # upstream: ghcr.io/xintaofei/codeg:0.22.1
+    image: registry.lazycat.cloud/czyt/xintaofei/codeg:b398c8e6039e6e08
     user: root
     environment:
       - CODEG_TOKEN={{.U.codeg_token}}
